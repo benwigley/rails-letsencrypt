@@ -53,8 +53,8 @@ LetsEncrypt.config do |config|
   # Default is false
   config.use_env_key = false
 
-  # Dorectly set the private key. If set, will take precedence
-  # over config.private_key_path and config.use_env_key
+  # Directly set the private key. If set it will take
+  # precedence over private_key_path and use_env_key
   # Default is nil
   config.letsencrypt_private_key = Rails.credentials.letsencrypt_private_key
 
