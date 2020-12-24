@@ -32,6 +32,7 @@ module LetsEncrypt
     end
 
     def load_private_key
+      return config.letsencrypt_private_key if config.letsencrypt_private_key
       return ENV['LETSENCRYPT_PRIVATE_KEY'] if config.use_env_key
       return File.open(private_key_path) if File.exist?(private_key_path)
       generate_private_key

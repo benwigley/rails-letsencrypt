@@ -9,6 +9,7 @@ module LetsEncrypt
       !Rails.env.production?
     end
     config_accessor :private_key_path
+    config_accessor :letsencrypt_private_key
     config_accessor :use_env_key do
       false
     end
