@@ -49,9 +49,14 @@ LetsEncrypt.config do |config|
   config.private_key_path = Rails.root.join('config', 'letsencrypt.key')
 
   # Use environment variable to set private key
-  # If enable, the API Client will use `LETSENCRYPT_PRIVATE_KEY` as private key
+  # If enabled, the API Client will use `LETSENCRYPT_PRIVATE_KEY` as private key
   # Default is false
   config.use_env_key = false
+
+  # Dorectly set the private key. If set, will take precedence
+  # over config.private_key_path and config.use_env_key
+  # Default is nil
+  config.letsencrypt_private_key = Rails.credentials.letsencrypt_private_key
 
   # Should sync certificate into redis
   # When using ngx_mruby to dynamic load certificate, this will be helpful
@@ -61,7 +66,7 @@ LetsEncrypt.config do |config|
   # The redis server url
   # Default is nil
   config.redis_url = 'redis://localhost:6379/1'
-
+pgem
   # Enable it if you want to customize the model
   # Default is LetsEncrypt::Certificate
   #config.certificate_model = 'MyCertificate'
